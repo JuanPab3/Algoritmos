@@ -1,0 +1,74 @@
+#Clase 01
+
+## Abstract Data Type (A.D.t.)
+
+- is a data type equipped with a set of operations.
+
+- is also known as a dynamic set (a set that can grow or shrink), that also have a set of ops.
+
+## Data Structure (D.S.)
+
+- is a concrete way of organizing and storing related data types with efficient access and modifications.
+
+- is an implementation of an ADT.
+
+## Operations 
+
+Let S be an ADT, XεS
+	### Mutators
+	- DELETE(S,X)
+	- INSERT(S,X)
+	### Queries
+	- SEARCH(S,X)
+	- MINIMUM(S)
+	- MAXIMUM(S)
+	- SUCCESSOR(S,X)
+	- PREDECESSOR(S,X)
+
+#--EXAMPLE#1--# 
+
+ADT: Date
+
+DATA
+	int day
+	int hour
+OPERATIONS
+	date(): returns a new instance of Date
+	add(Date,d): modifies day by day+d.day, modifies hour by hour+d.hour.
+#--EXAMPLE1--#
+
+
+## Containers
+	
+	### Sequential
+	- Vector
+	- List
+	- Array
+	- Deque
+	
+	### Associative
+	- Set
+	- Map
+
+
+	### Adaptors
+	- Stack
+	- Queue
+	- String
+
+## Vector A.D.T.
+
+- is a sequence of elements.
+
+- is supports the following ops:
+	
+	- ELEM(V,X):
+		Returns the element of V with rank X. 
+		Error occurs if X~ε[∅, V.len-1].
+	- INSERT(V,r,x):
+		Inserts elem x at pos r of V.
+		Error if r~ε[∅, V.len].
+	- REMOVE(V,r):
+		Remove elem at pos r of V.
+		Error if r~ε[∅, V.len].
+		

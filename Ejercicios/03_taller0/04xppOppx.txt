@@ -1,0 +1,1 @@
+En el caso de ++x lo que pasa es que primero cambia el valor de x y luego almacena ese valor, por el contrario x++ primero almacena el valor actual y luego le edita a x.
