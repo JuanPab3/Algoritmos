@@ -1,0 +1,29 @@
+##List ADT
+
+- Secuencia de elementos. No necesariamente indexables, almacenados en memoria no necesariamente de forma continua.
+	### Operaciones Fundamentales:
+	L es una lista y x es un elemento que puede estar en L:
+		- PUSH_FRONT(l,x):
+				- Insert element x in L at the beginning of the list
+		- PUSH_BACK(L,x):
+				- Insert element x in L at the end of the list.
+		- FRONT(L):
+				- Returns first elemnt in L.
+				- Call on an empty list = undefined.
+		- BACK(L):
+				- Return last elemt in L.
+				- Call in an empty list = undefined.
+		- POP_FRONT(L):
+				- Removes first element in L.
+				- Call on empty list = exeption.
+		- POP_BACK(L):
+				- Removes last element in L.    
+                                - Call on empty list = exeption.
+
+## Vectro ADT
+
+- Secuencia de elementos que si es indexable, almacenados de forma continua en memoria de forma continua.
+ ________     __
+|__|__|__|...|__|
+  1  2  3      n
+

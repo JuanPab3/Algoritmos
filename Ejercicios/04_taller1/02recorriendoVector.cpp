@@ -2,8 +2,7 @@
 #include<vector>
 #include<cmath>
 
-void printIntVect(const std::vector<int> v);
-
+void printVect(std::vector<int> &v);
 
 int main(){
 
@@ -16,31 +15,37 @@ int main(){
     newElem = pow(3,i);
     v.push_back(newElem);
   }
-  printIntVect(v);
+  printVect(v);
 
-
-  std::cout << *v.begin() << std::endl;
-
-  // /*c*/
+  /*c*/
+  /*Disorganised*/
   // int pos = 0;
   // while (true) {
-  //   if (*v.begin()+pos >= 100){
-  //     v.erase(v.begin()+pos, v.end());
-  //     break;
+  //   if (*(v.begin()+pos) >= 100){
+  //     v.erase(v.begin()+pos);
   //   }else {
   //       ++pos;
   //   }
-  //
   // }
 
+  /*Organised*/
+  int pos = 0;
+  while (true) {
+    if (*(v.begin()+pos) >= 100){
+      v.erase(v.begin()+pos, v.end());
+      break;
+    }else {
+        ++pos;
+    }
+  }
 
+  printVect(v);
 
   return 0;
 }
 
-
 /*----------------------------FUNCIONES----------------------------*/
-void printIntVect(const std::vector<int> v){
+void printVect(std::vector<int> &v){
   std::cout << "{";
   for (int elem : v) {
           std::cout << elem << " ";
