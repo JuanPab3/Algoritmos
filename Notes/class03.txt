@@ -1,0 +1,54 @@
+##Stacks ADT
+
+- Conjunto dinamico en el que el elemento a ser borrado está predeterminado. El cual maneja la propiedad LIFO (Last In, First Out).
+- Tiene diferetes formas de implementación (vectro,list).
+	
+	### Operaciones Fundamentales:
+	Sea S un conjunto dinamico que representa un stack y x es un elemento que puede o pertenece a S:
+	
+	- PUSH(S,x):
+		S.top = S.top + 1
+		S[S.top] = x
+	
+	- TOP(S):
+		return S[S.top]
+	
+	- POP(S):
+		if EMPTY(S):
+			error "underflow"
+		else:
+			S.top = S.top - 1
+			return S[S.top + 1]
+
+	- EMPTY(S):
+		if S.top == 0:
+			return TRUE
+		else:
+			return FALSE
+
+##Queues ADT
+- Conjunto dinamico en el que el elemento a ser borrado está predeterminado. El cual maneja la propiedad FIFO (First In, First Out).
+- Tiene diferetes formas de implementación (vectro,list).
+
+	###Operaciones Fundamentales:
+        Sea Q un conjunto dinamico que representa un stack y x es un elemento que puede o pertenece a Q:
+	
+	- ENQUEUE(Q,x):
+		Q[Q.tail] = x
+		Q.tail = Q.tail + 1
+	
+	- TAIL(Q):
+		return Q[Q.tail]	
+	
+	- HEAD(Q):
+		return Q[Q.tail]
+
+	- DEQUEUE(Q):
+		if EMPTY(Q):
+			error "undeflow"
+		else:
+			x = Q[Q.head]
+			Q.head = Q.head + 1
+			return x
+		
+		
