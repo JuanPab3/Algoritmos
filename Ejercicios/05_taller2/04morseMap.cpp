@@ -38,8 +38,6 @@ int main() {
   }
   textB.close();
 
-
-
   string word = " ";
 
   cout << "Traductor de / a clave Morse" << endl;
@@ -54,8 +52,6 @@ int main() {
       cerr << "Palabra no valida";
     }
   }
-
-
 
   return 0;
 }
