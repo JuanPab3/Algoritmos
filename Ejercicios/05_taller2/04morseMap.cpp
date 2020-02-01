@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <sstream>
 #include <string>
 #include <list>
 #include <map>
@@ -18,13 +19,11 @@ int main() {
   map<char,string> morse;
   map<string,char> esrom;
   /*---------------------------------------------------------------*/
-
   list<char> charL;
   list<string> stringL;
 
-
   ifstream text("04morseMap.txt"),textB("04morseMapB.txt");
-  char c,key;
+  char key;
   string value = "";
 
   /*Extrae las primeras dos lineas del archivo morse y las desecha.*/
@@ -47,47 +46,40 @@ int main() {
     }
   }
   text.close();
-  /*---------------------------------------------------------------*/
 
-  /*Abrir el archivo de caracteres agrega los elementos a una lista.
-  if(textB.good()){
-    while (!textB.eof()) {
-      textB >> c;
-      charL.push_back(c);
-    }
-  }
-  textB.close();
-  ---------------------------------------------------------------*/
-
+  string sentense = " ";
+while (!sentense.empty()) {
+  cout << "> ";
+  cin >> sentense;
   /*Verificar si el primer caractere de la palabra es morse o letra.*/
-  string word = ".-- ..- --.-";
-  string::iterator it = word.begin();
+  string::iterator it = sentense.begin();
   bool isMorse,isLetter;
-while (true) {
-  isLetter = isLet(charL,it);
-  if (isLetter == true)break;
-  isMorse  = isMor(it);
-  break;
-}
+  while (true) {
+    isLetter = isLet(charL,it);
+    if (isLetter == true)break;
+    isMorse  = isMor(it);
+    break;
+  }
   /*---------------------------------------------------------------*/
 
   /*Traducir cada palabra*/
+  istringstream input(sentense);
 
   if (isLetter == true){
-    for (char elem : word){
+    for (char elem : sentense){
       if (CisLet(elem,charL)) cout << "  " << morse.at(elem);
     }
-    cout << endl;
   } else if (isMorse == true) {
     string mString;
-    while(!word.eof()){
-      word >> mString;
+    while(!input.eof()){
+      input >> mString;
       if (stringM(stringL, mString)) cout << esrom.at(mString);
     }
-    cout << endl;
   }
+  cout << endl;
 
   /*---------------------------------------------------------------*/
+}
 
 
 
