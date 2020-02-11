@@ -4,10 +4,12 @@
 
 using namespace std;
 
-void doubleSelectionSort(vector < int > & v);
 void printVec( vector < auto > & v);
+void findMin(vector < int > & v);
+void findMax(vector < int > & v);
 
 int main() {
+
     vector < int > v;
     ifstream text("01_bubbleSortInt.txt");
 
@@ -24,23 +26,28 @@ int main() {
 
   v.pop_back();
 
-  printVec(v);
-  doubleSelectionSort(v);
-  printVec(v);
-
+  findMin(v);
+  findMax(v);
 
     return 0;
 }
 
-void doubleSelectionSort(vector < int > & v){
-    unsigned max = v.size();
-    for(unsigned i = 0; i < (max-1); i++){
-        unsigned jMin = i;
-        for(unsigned j = i+1;j < max; j++){
-            if(v[j] < v[jMin]) jMin = j;
-        }
-    if (jMin != i ) swap(v[i],v[jMin]);
+void findMin(vector < int > & v) {
+    int max = v.size();
+    int minIndx = 0;
+    for (int i = 1; i < (max);i++){
+        if (v[minIndx]>v[i]) minIndx = i;
     }
+    cout << "The min value is: " << v[minIndx] << endl;
+}
+
+void findMax(vector < int > & v) {
+    int max = v.size();
+    int maxIndx = 0;
+    for (int i = 1; i < (max);i++){
+        if (v[maxIndx]<v[i]) maxIndx = i;
+    }
+    cout << "The max value is: " << v[maxIndx] << endl;
 }
 
 void printVec( vector < auto > & v){
