@@ -1,0 +1,66 @@
+###Algoritmos y Estructuras de Datos
+##Taller 5
+
+
+1. Suponga que T1(N) = O(f(N)) y T2(N) = O(f(N)). Indique cuales de los siguientes
+   enunciados son verdaderos.
+
+   a) T1(N) + T2(N) = O(f(N))      | Verdadero
+   b) T1(N) − T2(N) = o(f(N))      | 
+   c) T1(N) / T2(N) = O(1)         |
+   d) T1(N) = O(T2(N))             |
+
+2. Sean f(N) y g(N) dos funciones asintóticamente positivas. Pruebe verdadera o
+   falsa cada una de las siguientes proposiciones.
+
+   a)f(N) = O(g(N)) implica g(N) = O(f(N)).
+   b)f(N) + g(N) = Θ(mı́n(f(N),g(N))).
+   c)f(N) = O(g(N)) implica 2^f(N) = O(2^g(N)).
+   d)f(N) = O(f^2(N)).
+   e)f(N) = O(g(N)) implica g(N) = Ω(f(N)).
+
+5. Para cada uno de los siguientes fragmentos de código haga un análisis del tiempo
+   de ejecución en términos de notación O(f(n)), Ω(g(n)) y Θ(h(n)).
+
+   a) for ( i = 0; i < n ; ++ i )
+        for ( j = 0; j < n * n ; ++ j )
+          ++ sum ;
+
+   b) for ( i = 0; i < n ; ++ i )
+        for ( j = 0; j < i ; ++ j )
+          ++ sum ;
+
+   c) for ( i = 0; i < n ; ++ i )
+        for ( j = 0; j < i * i ; ++ j )
+          for ( k = 0; k < j ; ++ k )
+            ++ sum ;
+
+   d) for ( i = 1; i < n ; ++ i )
+        for ( j = 1; j < i * i ; ++ j )
+          if ( j % i == 0)
+            for ( k = 0; k < j ; ++ k )
+              ++ sum ;
+
+  ¿Cambia el comportamiento asintótico de sus respuestas si reemplazamos ++sum por
+  sum++ ? Justifique.
+
+6. ¿Cuál es el tiempo de ejecución, T (N ), del siguiente ciclo como una función de N ?
+   Una vez calculado T (N ), muestre a cuáles de los conjuntos de funciones Θ(f (N )),
+   Ω(g(N )) o O(h(N )) pertenece.
+
+      for ( int i = 5; i < N ; i *= 2)
+        sum += i * i ;
+
+   Justifique claramente su respuesta. Suponga que se satisface que N > 6.
+
+7. ¿Cuál es el tiempo de ejecución, T (N ), del siguiente ciclo como función de N ?
+
+  int N ;
+  cin >> N ;
+
+  for ( int i = 1 ; i < N ; i ++)
+    for ( int j = i ; j < N ; j += i )
+      std :: cout << " AED \ n " ;
+
+  Una vez calculado T (N), expréselo en términos de Θ(f (N )), Ω(g(N )) o O(h(N )).
+  Proponga la cota más estricta posible.

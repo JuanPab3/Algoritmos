@@ -42,3 +42,43 @@ Ejemplo:
 
 """
 )
+
+print(
+"""
+    PROGRAMAS DE PROGRAMACIÓN < = = = = = = = = = > ALGORITMOS
+  - Lenguajes de programación                        - Pseudocódigo
+                                                     - Diagramas de flujo
+                                                     - Lenguaje Natural
+
+  - Computador                                       - Modelo de computación
+
+>>> Modelo de computación Diagramas
+    -> Operaciones básicas: adición, multiplicación, comparación y asignación.
+    -> Toma una unidad de tiempo hacer cualquiera de estas operaciones.
+    -> Las unidades de información tienen un tamaño fijo (int, float, string, bool, etc.).
+    -> El computador tiene memoria infinita.
+
+    -> No es necesario implementar codigo para el analisis del algoritmo.
+
+    REGLAS PARA CALCULAR TIEMPOS DE EJECUCIÓN
+    
+    -> Imprimir, utilizar operaciones basicas, asignar valores o comparar tamaño
+       utilizan tiempo constante 'O(1)'.
+    -> Un ~ciclo for~ esta representado en tiempo lineal 'O(N)', ya que es la
+       repeticion de una acción N veces. Por otro lado si es un ~ciclo for~
+       anidado en otro ~ciclo for~ el tiempo de ejecución esta definido como
+       el producto entre las N veces que corre el ciclo exterior por M veces
+       que corre ciclo interior tal que:
+                                        O(N)*O(M) = O(NM)
+    -> Si por otro lado los ~ciclos for~ no estan anidados, sino son paralelos
+       en el algoritmo, el tiempo de ejecución es la suma de los tiempos de
+       ejecución individuales, tal que:
+                                       O(N)+O(M) = O(N+M)
+    -> Con respecto a los If/Else se tiene que el tiempo de ejecución nunca es
+       mayor que el bloque de instrucciones más largo entre todas las opciones
+       esto significa que si tenemos tres blockes IF, ELIF y ELSE el tiempo de
+       ejecución se define como:
+                                MAX(O(IF),O(ELIF),O(ELIF))
+
+"""
+)
