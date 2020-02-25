@@ -1,5 +1,5 @@
 cupo:
-15
+500
 consumo:
 5
 15
