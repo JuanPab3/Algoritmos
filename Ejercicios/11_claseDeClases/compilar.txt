@@ -1,0 +1,6 @@
+Orden:
+g++ -std=c++14 -Wall -Wextra -Werror -c main.cpp
+g++ -std=c++14 -Wall -Wextra -Werror -c class.cpp
+g++ -std=c++14 -Wall -Wextra -Werror  main.o class.o
+/.out.a
+
