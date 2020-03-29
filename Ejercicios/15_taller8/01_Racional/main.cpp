@@ -3,28 +3,35 @@
 
 using namespace std;
 
+Racional r_pow(Racional &r,const int &k);
+
 int main() {
-    cout << boolalpha;
 
-    Racional ra1(1,74,15),ra2 = ra1;
-    -ra1;
-    ra2 += (ra1);
-    Racional ra3 = (ra1-ra2);
+    int n = 16, a = 1;
+    Racional r(1,2),total, *pr = new Racional[n];
 
-    bool rab = ra1 <= ra2;
-
-
-    cout << "Num: " << ra1.get_num() << endl;
-    cout << "Den: " << ra1.get_den() << endl;
-    cout << ra1 << " = " << ra2 << " is " << rab << endl;
-
-    cout << ra1 << " - " << ra2 << " = " << ra3 << endl;
-
-    Racional q;
-
-    cin >> q;
-
-    cout << q << endl;
-
+    for (int k = 0; k < n; k++) {
+        Racional temp = r_pow(r,k);
+        long double divi;
+        temp *= a;
+        total += temp;
+        divi = total.flot();
+        cout << temp << '\t' << total << '\t' << divi << endl;
+        pr[n] = temp;
+    }
+    delete[] pr;
     return 0;
+}
+
+Racional r_pow(Racional &r,const int &k){
+    Racional temp = r;
+    if (k == 0) {
+        temp.set_rac(1,1);
+    } else if (k > 1){
+        // cout << temp << endl;
+        for (int i = 1; i < k; i++) {
+            temp *= r;
+        }
+    }
+    return temp;
 }

@@ -16,11 +16,16 @@ public:
     Racional ();
     Racional (int num0);
     Racional (int num0, int den0);
+    Racional (const Racional &ra1, const Racional &ra2);
+    Racional (const Racional &ra1, int den0);
+    Racional (int num0, const Racional &ra2);
     Racional (int mix0, int num0, int den0);
+    Racional(const Racional &other);
 
     /*Accessor Methods*/
-    int get_num();
-    int get_den();
+    int get_num() const;
+    int get_den() const;
+    float flot() const;
 
     /*Modifier Methods*/
     void set_rac(int num0, int den0);

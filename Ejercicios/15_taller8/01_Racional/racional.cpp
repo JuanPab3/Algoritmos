@@ -41,18 +41,50 @@ Racional::Racional (int num0, int den0){
     Racional::simplify();
 }
 
+Racional::Racional (const Racional &ra1, const Racional &ra2){
+    num = ra1.num * ra2.den;
+    den = ra1.den * ra2.num;
+    Racional::simplify();
+}
+
+Racional::Racional (const Racional &ra1, int den0){
+    num = ra1.den ;
+    den = den0 * ra1.num;
+    Racional::simplify();
+}
+
+Racional::Racional (int num0, const Racional &ra2){
+    num = num0 * ra2.den;
+    den = ra2.num;
+    Racional::simplify();
+}
+
 Racional::Racional (int mix0, int num0, int den0){
     num = num0+(mix0*den0);
     den = den0;
     Racional::simplify();
 }
+
+Racional::Racional(const Racional &other){
+    num = other.num;
+    den = other.den;
+    Racional::simplify();
+}
+
 /*==========================ACCESSOR_METHODS============================*/
-int Racional::get_num(){
+int Racional::get_num() const{
     return num;
 }
 
-int Racional::get_den(){
+int Racional::get_den() const{
     return den;
+}
+
+float Racional::flot() const{
+    float num0 = num, den0 = den;
+    float flot = num0/den0;
+    // std::cout << flot << std::endl;
+    return flot;
 }
 /*==========================MODIFIER_METHODS===========================*/
 void Racional::set_rac(int num0, int den0){
@@ -71,12 +103,12 @@ void Racional::set_den(int den0){
     Racional::simplify();
 }
 /*========================OPERATORS_OVERLOADING========================*/
-ostream &operator<<(ostream &os, Racional & a){
+std::ostream &operator<<(std::ostream &os, Racional & a){
   os << a.get_num() << "/" << a.get_den();
   return os;
 }
 
-istream &operator>>(istream &is, Racional & a){
+std::istream &operator>>(std::istream &is, Racional & a){
     int num0,den0;
     is >> num0 >> den0;
     a.set_num(num0) ;a.set_den(den0);
