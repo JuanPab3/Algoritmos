@@ -132,22 +132,26 @@ bool operator!=(Racional & a, Racional & b){
 }
 
 bool operator<=(Racional & a, Racional & b){
-    double tA = (a.get_num()/a.get_den()), tB = (b.get_num()/b.get_den());
+    double aN = a.get_num(),bN = b.get_num(), aD = a.get_den(), bD = b.get_den();
+    double tA = (aN/aD), tB = (bN/bD);
     return (tA <= tB);
 }
 
 bool operator>=(Racional & a, Racional & b){
-    double tA = (a.get_num()/a.get_den()), tB = (b.get_num()/b.get_den());
+    double aN = a.get_num(),bN = b.get_num(), aD = a.get_den(), bD = b.get_den();
+    double tA = (aN/aD), tB = (bN/bD);
     return (tA >= tB);
 }
 
 bool operator<(Racional & a, Racional & b){
-    double tA = (a.get_num()/a.get_den()), tB = (b.get_num()/b.get_den());
+    double aN = a.get_num(),bN = b.get_num(), aD = a.get_den(), bD = b.get_den();
+    double tA = (aN/aD), tB = (bN/bD);
     return (tA < tB);
 }
 
 bool operator>(Racional & a, Racional & b){
-    double tA = (a.get_num()/a.get_den()), tB = (b.get_num()/b.get_den());
+    double aN = a.get_num(),bN = b.get_num(), aD = a.get_den(), bD = b.get_den();
+    double tA = (aN/aD), tB = (bN/bD);
     return (tA > tB);
 }
 

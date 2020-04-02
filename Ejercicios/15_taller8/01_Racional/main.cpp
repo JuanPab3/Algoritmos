@@ -1,11 +1,13 @@
-#include <iostream>
 #include "racional.hpp"
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
 Racional r_pow(Racional &r,const int &k);
 
 int main() {
+    cout << boolalpha;
 
     int n = 16, a = 1;
     Racional r(1,2),total, *pr = new Racional[n];
@@ -20,6 +22,7 @@ int main() {
         pr[n] = temp;
     }
     delete[] pr;
+
     return 0;
 }
 
@@ -34,4 +37,3 @@ Racional r_pow(Racional &r,const int &k){
         }
     }
     return temp;
-}
