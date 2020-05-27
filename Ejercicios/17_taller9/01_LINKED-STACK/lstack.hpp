@@ -2,6 +2,7 @@
 #define _LINKED_STACK_
 
 #include <iostream>
+#include <typeinfo>
 
 template <class T>
 class LinkedStack {
@@ -14,38 +15,27 @@ private:
 
     /*Class properties*/
     Node *head;
-    unsigned length;
+    int length;
 
 public:
     /*Constructors & Destructor*/
     LinkedStack();
+    LinkedStack(const LinkedStack<T> & src);
     ~LinkedStack();
 
     /*Accessor Methods*/
-    unsigned size() const;
+    int size() const;
     bool empty() const;
     T peek() const;
 
     /*Modifier Methods*/
     void push(const T & new_item);
+    void reverse();
     void clear();
     T pop();
 
     /*Class Operators*/
-    void operator=(LinkedStack <T> & src){
-        LinkedStack <T> temp;
-        while (!src.empty())
-            temp.push(src.pop());
-        while (!temp.empty()){
-            Node *tempN = new Node;
-            tempN->item = temp.peek();
-            tempN->prev = head;
-
-            head = tempN;
-            length++;
-            src.push(temp.pop());
-        }
-    }
+    void operator=(LinkedStack <T> & src);
 
 };
 

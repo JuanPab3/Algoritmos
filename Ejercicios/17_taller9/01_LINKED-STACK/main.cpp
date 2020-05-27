@@ -16,6 +16,13 @@ int main() {
     }
     cout << stk << endl;
 
+    LinkedStack<char> stk_copy(stk);
+    // stk_copy = stk;
+    // cout<<"MAIN IS WORKING\n";
+    stk_copy.reverse();
+
+    cout << stk_copy << endl;
+
     while (!stk.empty()) {
         cout << "Pop: " << stk.pop() << endl;
     }
@@ -42,32 +49,29 @@ int main() {
 
 
     // crear un stack de vector's
-    LinkedStack<vector<int>> stk_vec;
-
-    vector<int> v1(10, 0);
-    vector<int> v2(1, -2);
-    vector<int> v3(100, 2);
-
-    stk_vec.push(v1);
-    stk_vec.push(v2);
-    stk_vec.push(v3);
-
-    while (!stk_vec.empty()) {
-        cout << "Vector --> size: " << stk_vec.peek().size();
-        cout << " - elem: " << stk_vec.peek()[0] << endl;
-        stk_vec.pop();
-    }
+    // LinkedStack<vector<int>> stk_vec;
+    //
+    // vector<int> v1(10, 0);
+    // vector<int> v2(1, -2);
+    // vector<int> v3(100, 2);
+    //
+    // stk_vec.push(v1);
+    // stk_vec.push(v2);
+    // stk_vec.push(v3);
+    //
+    // while (!stk_vec.empty()) {
+    //     cout << "Vector --> size: " << stk_vec.peek().size();
+    //     cout << " - elem: " << stk_vec.peek()[0] << endl;
+    //     stk_vec.pop();
+    // }
 
     LinkedStack<bool> bstk_copy;
 
-    cout << "OG: "<< endl << bstk << endl;
+    cout << "OG " << bstk << endl;
 
     bstk_copy = bstk;
-    // var = false;
-    // for (unsigned i = 0; i < 11; i++)
-    //     bstk_copy.push(var);
 
-    cout << "Copy: "<< endl << bstk_copy << endl;
+    cout << "Copy " << bstk_copy << endl;
 
     return 0;
 }
